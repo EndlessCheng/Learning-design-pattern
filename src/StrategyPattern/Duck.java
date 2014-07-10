@@ -8,18 +8,26 @@ public abstract class Duck {
 	public Duck() {
 
 	}
-	
+
 	public abstract void display();
-	
-	public void performFly(){
+
+	public void setFlyBehavior(FlyBehavior fb) {
+		flyBehavior = fb;
+	}
+
+	public void setQuackBehavior(QuackBehavior qb) {
+		quackBehavior = qb;
+	}
+
+	public void performFly() {
 		flyBehavior.fly(); // 委托给行为类实现
 	}
-	
-	public void performQuack(){
+
+	public void performQuack() {
 		quackBehavior.quack();
 	}
-	
-	public void swim(){
+
+	public void swim() {
 		System.out.println("I'm a duck, I can swim.");
 	}
 
